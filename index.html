@@ -13,19 +13,9 @@
     <div id="wrap">
         <header>
             <div class="logo">
-                <a href="#">
-                    <img src="./img/logo.gif" alt="logo">
-                </a>
+                <a href="#"><img src="./img/logo.gif" alt="logo"></a>
             </div>
             <nav>
-                <div id="b1" class="box">
-                    <svg id="i1" class="icon" viewBox="0 0 100 100">
-                      <path id="top-line-1"     d="M30,37 L70,37 Z"></path>
-                      <path id="middle-line-1" 	d="M30,50 L70,50 Z"></path>
-                      <path id="bottom-line-1" 	d="M30,63 L70,63 Z"></path>
-                    </svg>
-                  </div>
-                  
                 <ul class="navigator">
                     <li><a href="#">menu1</a></li>
                     <li><a href="#">menu2</a></li>
@@ -56,7 +46,6 @@
                             </p>
                         </div>
                         <img src="./img/shop-terrice.jpg">
-                        
                     </li>
                     <li class="shop_inside">
                         <img src="./img/shop-inside.jpg">
@@ -74,7 +63,6 @@
                 <div class="dark">
                     <h2>OUR SPECIALITES</h2>
                 </div>
-                
             </div>
             <div class="food_box">
                 <ol class="food">
@@ -83,9 +71,7 @@
                         <div class="text_box">
                             <dl class="text">
                                 <h4 class="title">NO. 1</h4>
-                                <dt>
-                                    Escargots de Bourgogne
-                                </dt>
+                                <dt> Escargots de Bourgogne</dt>
                                 <dd>€ 14.00</dd>
                             </dl>
                         </div>
@@ -98,7 +84,6 @@
                                     <dt>Steak Frites / Ribeye Frites</dt>
                                     <dd>€ 23.00</dd>
                                 </dl>
-                        
                         </div>
                     </li>
                     <li class="rank rank_3">
@@ -109,8 +94,6 @@
                                 <dt>Soupe à l’Oignon</dt>
                                 <dd>€ 5.90</dd>
                             </dl>
-                            
-
                         </div>
                     </li>
                     <li class="rank rank_4">
@@ -121,13 +104,11 @@
                                 <dt>Salade de Chèvre Chaud</dt>
                                 <dd>€ 9.50</dd>
                             </dl>
-                            
                         </div>
                     </li>
                 </ol>
             </div>
-            <div class="back_photo_3">
-            </div>
+            <div class="back_photo_3"></div>
             <div class="review_box">
                 <div class="title_box">
                     <div class="title">
@@ -148,9 +129,9 @@
                         <h4>"JUST FANTASTIC"</h4>
                         <hr class="new1">
                         <p>
-                            Service staff were just<br/> 
-                            fantastic, altogether just<br/>
-                            really enjoyed the<br/>
+                            Service staff were just
+                            fantastic, altogether just
+                            really enjoyed the
                             experience and the food
                         </p>
                         <hr class="new1">
@@ -166,9 +147,9 @@
                         <h4>"JUST FANTASTIC"</h4>
                         <hr class="new1">
                         <p>
-                            Service staff were just<br/> 
-                            fantastic, altogether just<br/>
-                            really enjoyed the<br/>
+                            Service staff were just
+                            fantastic, altogether just
+                            really enjoyed the
                             experience and the food
                         </p>
                         <hr class="new1">
@@ -184,9 +165,9 @@
                         <h4>"JUST FANTASTIC"</h4>
                         <hr class="new1">
                         <p>
-                            Service staff were just<br/> 
-                            fantastic, altogether just<br/>
-                            really enjoyed the<br/>
+                            Service staff were just
+                            fantastic, altogether just
+                            really enjoyed the
                             experience and the food
                         </p>
                         <hr class="new1">
@@ -202,9 +183,9 @@
                         <h4>"JUST FANTASTIC"</h4>
                         <hr class="new1">
                         <p>
-                            Service staff were just<br/> 
-                            fantastic, altogether just<br/>
-                            really enjoyed the<br/>
+                            Service staff were just
+                            fantastic, altogether just
+                            really enjoyed the
                             experience and the food
                         </p>
                         <hr class="new1">
@@ -221,9 +202,7 @@
                     <span><i class="fas fa-map-marker-alt"></i></span>
                     Chez-Max,1 Palace St, Dublin 2, ireland
                 </p>
-                <div id=map>
-                </div>
-               
+                <div id=map></div>
             </div>
         </main>
         <footer>
@@ -237,7 +216,7 @@
                         </div>
                         <div class="lunch">
                             <h3>Lunch</h3>
-                            <span>12pm– 3:30pm – Tuesday to Friday</span><br/>
+                            <span>12pm– 3:30pm – Tuesday to Friday</span>
                             <span>12pmm – 4pm – Saturday and Sunday</span>
                         </div>
                         <div class="early bird">
@@ -254,41 +233,17 @@
             <div class="contact_box">
                 <div class="contact">
                     <H2>CONTACT</H2>
-                    
                     <h4>Tel: 01 633 7215</h4>
-                    <p class="notice">
-                        Reservations by phone and soon by OpenTable.
-                    </p>
+                    <p class="notice"> Reservations by phone and soon by OpenTable.</p>
                     <div class=sns>
                         <a href="https://twitter.com/ChezMaxPalace"> <i class="fab fa-twitter"></i> </a>
                         <a href="https://www.instagram.com/explore/locations/264788638/chez-max-dublin/?hl=en"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            
         </footer>
     </div>
-    <script>
-        function initMap(){
-            const myLatLong={
-                lat : 53.343825,
-                lng : -6.266305 
-            }
-            const map = new google.maps.Map(
-                document.getElementById("map"),
-                {
-                    center: myLatLong, 
-                    scrollwheel: false,
-                    zoom:18
-                }
-            )
-            const marker = new google.maps.Marker({
-                position:myLatLong,
-                map:map,
-                title:"chez-max"
-            })
-        }
-    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT7sSTMO5sgyqu_1l0KuaIK_QAyv0U44c&callback=initMap" async defer></script>
+    <script src="./sctript/script.js"></script>
 </body>
 </html>

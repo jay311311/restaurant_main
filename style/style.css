@@ -2,10 +2,6 @@
 ul,li{list-style: none;}
 a{display: block; text-decoration: none;color: inherit;}
 
-{font-family: 'Dancing Script', cursive;
-    font-family: 'Lobster', cursive;
-    font-family: 'Zilla Slab', serif;}
-
 header{
     width: 100%;
     height:100px;
@@ -26,13 +22,12 @@ nav{
     display: flex;
     justify-content: space-between; 
 }
-.b1{display: none;}
+
 .navigator{
     display: flex;
     justify-content: space-around; 
-    position: relative;
-    top:40px;
-    left: 300px;
+   margin: 30px auto 0 auto;
+  
 }
 
 .navigator a{
@@ -40,36 +35,37 @@ nav{
     line-height: 55px;
     font-style: italic;
     text-align: center; 
-    font-size: 25px;
+    font-size: 1.563rem;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 nav .person{
     font-size: 45px;
-    position: relative;
-    top:20px;
-    left:0px;
-    margin-right: 20px;
+    margin-top: 30px;
+    margin-right: 4%;
     color: white;
 }
 
 .back_photo_1{
     width: 100%;
     height:100vh;
-    background-size: contain;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     background-image: url("../img/main1.jpg");
 }
+
 .dark{
     width: 100%;
     height: 100%;
     background-color:  rgba(0, 0, 0, 0.3);
     color: white;
-      display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-
 }
+
 .dark img{
     display: block; 
     margin: auto;
@@ -88,10 +84,18 @@ nav .person{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+.shop.show, .food.show{
+    opacity: 1;
+    transform: translate(0px);
+}
+
 .shop .text_box p{width:70%; margin: 0 auto;}
+
 .shop,.food{
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 1.5s ease-in-out;
     background: white;
     width: 1360px;
     height:760px;  
@@ -99,8 +103,10 @@ nav .person{
     top:-88px;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
 }
+
 .shop .title {
   font-family: 'Lobster', cursive;
+  text-align: center;
   font-size: 30px;
   font-weight:300 ;
   margin-bottom: 30px;
@@ -115,9 +121,12 @@ nav .person{
 }
 
 .back_photo_2{
+    color:white;
+    font-family: 'Zilla Slab', serif;
     width: 100%;
     height:60vh;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-image: url("../img/main22.jpg");
@@ -125,30 +134,27 @@ nav .person{
     justify-content: center;
     align-items: center;
 }
-.back_photo_2 h2{
-    color:white;
-    font-family: 'Zilla Slab', serif;
-}
+
 .food{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .rank{
     width:680px ;
     display: flex;
     justify-content: center;
+}
 
-}
-.text_box{
-width: 100%;
-}
+.text_box{width: 100%;}
+
+.text_box p{font-size: 18px;}
+
 .back_photo_3{
     width: 100%;
     height:60vh;
-    background-position:center  center; 
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-image: url("../img/main3.jpg");
@@ -167,6 +173,7 @@ width: 100%;
     align-items: center;}
 
 .title_box h2{font-size:60px;}
+
 .title_box h5{
     font-size:25px; 
     font-weight: 200; 
@@ -174,7 +181,14 @@ width: 100%;
     text-align: center;
     color: gray;
 }
-.rank .text_box {display: flex; justify-content: center; align-items: center;}
+
+.rank .text_box {
+    padding:10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
 .rank h4{color:rgb(250, 124, 101);
     padding-bottom:30px;
     text-align:center;
@@ -182,13 +196,15 @@ width: 100%;
     font-family: 'Lobster', cursive;
     font-weight: 300;
 }
+
 .rank dt{ 
-    font-size: 20px;
+    font-size:  1.25rem;
     text-align: center;
     font-weight: 600;
     padding-bottom: 20px;
-color: rgb(66, 66, 66);
+    color: rgb(66, 66, 66);
 }
+
 .rank dd{
     font-family: 'Zilla Slab', serif; 
     font-size: 20px; 
@@ -198,6 +214,7 @@ color: rgb(66, 66, 66);
 }
 
 .review_box h2{color: rgb(82, 80, 80);}
+
 .review_card_box{
     margin: 0 auto;
     width: 90%;
@@ -209,11 +226,24 @@ color: rgb(66, 66, 66);
 .review_card{
     width:350px;
     height: 500px;
-
 }
-.review_card .rating{font-size: 20px; text-align: left;color: rgb(53, 52, 52); }
-.review_card h4{ text-align: center; font-size: 30px;margin: 20px 0;color: rgb(100, 98, 98);}
-.review_card p{text-align: center;color: rgb(100, 98, 98);}
+
+.review_card .rating{
+    font-size: 20px; 
+    text-align: left;
+    color: rgb(53, 52, 52); }
+
+.review_card h4{ 
+    text-align: center; 
+    font-size: 30px;
+    margin: 20px 0;
+    color: rgb(100, 98, 98);
+}
+
+.review_card p{
+    text-align: center;
+    color: rgb(100, 98, 98);
+}
 
 .new1{
     margin: 40px auto;
@@ -221,7 +251,8 @@ color: rgb(66, 66, 66);
     background-color: tomato;
     border: 3px solid tomato;
 }
-.location{padding-bottom: 150px;  ;} 
+
+.location{padding-bottom: 150px;} 
 
 .location p{
     margin:0 auto;
@@ -231,6 +262,7 @@ color: rgb(66, 66, 66);
     text-align: center;
     color: rgb(82, 80, 80);
 }
+
 .location_title{
     color: rgb(82, 80, 80);
  padding: 20px 0;
@@ -255,15 +287,15 @@ footer{
      justify-content: center;
       text-align: center;
     background-color: rgba(0, 0, 0, 0.75);
-    
 }
+
 footer>div{
     width:50%;
      color:lightgray;
      display: flex; 
      justify-content: center; 
      align-items: center;
-    }
+}
 
 .timetable{ 
     display: flex; 
@@ -271,246 +303,163 @@ footer>div{
     align-items: center;
     flex-wrap: wrap;
 }
-.timetable>div{width:50%; margin-bottom: 20px;}
+
+.timetable>div{
+    width:50%; 
+    margin-bottom: 20px;
+}
+
 .contact_box h2,.open_hours_box h2{margin-bottom: 15px;}
+
 .sns{
     display: flex; 
     width:30%;
     margin:0 auto; 
     justify-content: space-around;
     align-items: center;}
+
 .sns svg{font-size:30px;margin:20px 20px;}
+
 @media screen and (max-width:1440px) { 
-    .navigator{top:30px; left: 200px;}
-
-    .navigator a{font-size: 20px;}
-
-    nav .person{left:0; font-size: 30px;}
+    .navigator{ margin-top: 10px;}
+    nav .person{margin-top: 18px;font-size: 30px;}
     .logo{width:200px; height: 100px;}
     .logo img{width:150px; height: auto;}
-    .back_photo_1,.back_photo_2,.back_photo_3{
-        background-size: cover;
-    } 
 
-    .shop_box,.food_box{height: 484px;}
-
-    .shop,.food{width: 1060px; height: 554px; 
-            background-color: white;
-    
-        top:-60px;}
-
+    .shop_box,.food_box{height: 484px;background-color: white;}
+    .shop,.food{width: 1060px; height:110%; top:-60px;}
     .shop_enter p{width:360px; height: 100%;}
     .shop_enter img{width:700px;}
     .shop_inside img{width:360px; height: auto;}
     
- 
-    .food{ top:-40px;}
     .food li,.food .text_box{width:530px; background-color: white;}
     .food img{width:265px ;height: auto;}
 
-    .title_box h2{font-size:40px;}
-    .title_box{padding:100px 0 50px 0;}
-
+    .review_box .title_box h2{font-size:40px;}
+    .review_box .title_box{padding:100px 0 50px 0;}
     .review_card{width:200px; height: auto;}
-
     .review_card .rating{font-size: 16px; text-align: left; }
     .review_card h4{ text-align: center; font-size: 20px;margin: 20px 0;}
     .review_card p{text-align: center;}
 
-    #map{
-        width: 70%;
-        height: 350px;
-    }
+    #map{ width: 70%; height: 350px;}
 }
 
 @media screen and (max-width:1025px) { 
+    .navigator a{ line-height: 30px;}
+    nav .person{ margin-top:25px; font-size: 20px;}
 
-    /* .b1{display: block;}
-    .icon{
-        position: relative;
-        left: 680px;
-        top: 13px;
-        width: 60px; 
-        height: 60px;
-        stroke: #FFFFFF; opacity: .95;
-        fill: none;
-        stroke-width: 6;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      cursor: pointer;
-    }
-    nav:hover .navigator{display: block; position: relative; top:80px;left: -50px;}
-
-    .navigator{top:0;left: 0;display: none;}
-    nav .person{left:950px; font-size: 30px;}
-     */
-     .navigator{ left:120px}
-     .navigator a{width: 100px; line-height: 30px;}
-    .back_photo_1,.back_photo_2,.back_photo_3{
-        background-position: center center;
-        width: 100%;
-    }
-    
-    .shop_box,.food_box{height: 350px; background-color: white;}
-
-    .shop,.food{width:816px; height: 460px;    top:-60px;}
-
+    .shop_box,.food_box{height: 350px;}
+    .shop,.food{width:816px; height: 460px;    top:-50px;}
     .shop_enter p{width:250px; height: 100%;}
     .shop_enter img{width:566px;}
     .shop_inside img{width:250px; height: auto;}
-    .text_box{height: 100%;}
-    .food_box{
-        height:600px
-    }
-    .food{height: 912px; top:-25%} 
-    .food li,.food .text_box{width:100%; background-color: white;}
+    
+    .food li,.food .text_box{width:50%; }
     .food img{width:204px ;height: auto;}
+
     .review_box,.location{height:70%}
-
-    .title_box h2{font-size:40px;}
-    .title_box{padding:100px 0 50px 0;}
-
-    .review_card{width:200px; height: auto;}
-
-    .review_card .rating{font-size: 16px; text-align: left; }
-    .review_card h4{ text-align: center; font-size: 20px;margin: 20px 0;}
-    .review_card p{text-align: center;}
-
-
-    #map{
-        width: 70%;
-        height: 350px;
-    }
+    .review_box .title_box h2{font-size:2.1rem;}
+    .review_box .title_box{padding:100px 0 50px 0;}
 
     .open_hours_box h2{margin:5px 0;}
     .timetable>div{width:50%; margin-bottom: 15px; font-size: .95rem;}
  }
 
  @media screen and (max-width:768px) { 
-    .dark img:nth-child(1){width:400px; height: auto;}
-    .dark img:nth-child(2){width:250px; height: auto;}
-    nav .person{left:0; font-size: 30px;margin-right: 120px;}
+    .dark img:nth-child(1){width:400px;}
+    .dark img:nth-child(2){width:250px;}
+  
+    .navigator{   margin-top: 20px;  }
+    .navigator a{  font-size:1.125rem;  width: 95px;}
+    .main_box{position: relative; top:60px;}
 
-
-    .b1{display: block;text-align: right;}
-    .icon{
-        position: relative;
-        left: 500px;
-        top: 13px;
-        width: 60px; 
-        height: 60px;
-        stroke: #FFFFFF; opacity: .95;
-        fill: none;
-        stroke-width: 6;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      cursor: pointer;
-    }
-    nav:hover .navigator{
-        display: block; 
-        position: relative; 
-        
-        }
-
-    .navigator{top:060px;left: 270px; display: none; }
-
-    .shop_box,.food_box{height: 250px; background-color: white;}
-    .shop,.food{width:602px; overflow: none; height:100%; top:-30px;}
+    .shop_box,.food_box{height: 250px; }
+    .shop,.food{width:602px; height:110%; top:-50px;}
     .shop_enter p{width:100%x; height: auto;}
     .shop_enter img{width:60%;height: auto;}
-
-    .shop_inside img{width:40%; height: auto;}
     .shop_enter .text_box {width:30%; margin: 0 auto;}
-    .shop .text_box .title{font-size: 25px; margin-bottom: 10px;}
+    .shop_inside img{width:40%; height: auto;}
+    .shop .text_box .title{font-size: 25px; margin-bottom: 10px; text-align: center;}
+    
     .text_box p {font-size: 12px;}
    
-    .food{top:-30px; overflow: none;}
-    .food li,.food .text_box{width:50%; background-color: white;}
-    .food img{width:150px ;height:auto;}
- 
+    .food{  top:-25% }
+    
+    .food img{width:150px }
+    .rank h4{padding:15px 0;    font-size: 1.875rem;}
+    .rank dt{font-size: 0.875rem}
    
     .review_card_box{flex-wrap: wrap;}
     .review_card{width:40%; height: auto; flex-wrap:wrap ;}
-
     .review_card .rating{font-size: 12px; text-align: left; }
     .review_card h4{ text-align: center; font-size: 20px;margin: 20px 0;}
     .review_card p{text-align: center;}
-    .title_box h2{font-size:40px;}
-    .title_box h5{ font-size:18px;}
+    .review_card .title_box h5{ font-size:18px;}
+    
     .location_title{font-size:26px;}
    
-
     footer>div{font-size: 0.9rem;}
-    .open_hours_box h2{margin:5px 0; font-size: .9rem;}
+    .open_hours_box h2{font-size: .9rem;}
     .contact h2{font-size: .9rem;}
-    .timetable>div{width:50%; margin-bottom: 15px; font-size: .8rem;}
-        
+    .timetable>div{ font-size: .8rem;}
 }
-  
-@media screen and (max-width:375px) { 
 
+
+@media screen and (max-width:425px) { 
     .logo img{ width: 80px ;height:auto;}
-    .dark img:nth-child(1){width:200px; height: auto;}
-    .dark img:nth-child(2){width:120px; height: auto;}
-    nav .person{left:0; font-size: 20px;margin-right: 20px;}
-    .icon{
-        position: relative;
-        left: 120px;
-        top: 18px;
-        width: 30px; 
-        height: 30px;
-    }
-    .navigator{top:050px;left: 30px; display: none; }
-    .navigator a{ font-size:15px ; width:80px; line-height: 30px;}
-    .shop,.food{width:250px; overflow: none; height:100%; top:-40px;}
+    .dark img:nth-child(1){width:250px;}
+    .dark img:nth-child(2){width: 200px; }
+    nav .person{ font-size: 17px;  margin-top: 15px;   margin-left: auto}
+ 
+    .navigator{ 
+        z-index: 999;
+        position: fixed; 
+        bottom: 0; 
+        right: 0; 
+        left: 0; 
+        background-color: tomato; }
+    .navigator a{margin:5px 0; font-size:15px ; width:80px; line-height: 30px;}
+    .main_box { top:70px}
+   
+    .shop,.food{width:250px;   top:-40px;}
     .shop_enter,.shop_inside{display: block;}
-
-    
-
-    .shop_enter p{width:100%x; height: auto;}
+   
     .shop_enter img{width:100%; height: auto;}
-
     .shop_inside img{display: none;}
-    .shop_enter .text_box {width:100%; margin: 0 auto;}
-    .shop .text_box .title{font-size: 20px;padding:10px 0; margin-bottom: 0;text-align: center;}
+    .shop_enter .text_box {width:100%; }
+    .shop .text_box .title{font-size: 20px;padding:10px 0; margin-bottom: 0;}
+ 
     .text_box p {font-size: 12px; padding-bottom: 15px;}
-
     
-    .food{top:-30px; overflow: none; padding-right: 10px; height: 314px;}
     .food img{display: none;}
     .food li,.food .text_box{width:50%; background-color: white;}
     .food img{width:150px ;height:auto;}
 
     .rank .text_box{width: 100%;}
-    .rank h4{color:rgb(250, 124, 101);
-        padding:10px 0;
-        text-align:center;
-        font-size: 20px;
-        font-family: 'Lobster', cursive;
-        font-weight: 300;
-    }
-    .rank dt{ 
-        font-size: 14px;
-        text-align: center;
-        font-weight: 600;
-        padding-bottom: 20px;
-    color: rgb(66, 66, 66);
-    }
-    .rank dd{
-        font-family: 'Zilla Slab', serif; 
-        font-size: 12px; 
-        color: rgb(129, 126, 126); 
-        text-align: right;
-        padding-bottom: 30px;
-    }
+    .rank h4{padding:10px 0;}
+   
+    .rank dt{  font-size: 14px;}
+    .rank dd{ font-size: 12px; }
 
-
-    .title_box h2{font-size:22px ; text-align: center;}
-    .review_card:nth-child(3),.review_card:nth-child(4){display: none;}
+    .contact_box h2{margin:5px 0}
+    .review_box h2{font-size:22px ; text-align: center;}
+    .review_card:nth-child(3),
+    .review_card:nth-child(4){display: none;}
     .review_card h4{ text-align: center; font-size: 16px;margin: 20px 0;}
-    footer{height: 300px; display: block;}
+    
+    .location_title{font-size: 20px;}
+    .location p{font-size: 12px;}
+    
+    footer{height: 280px; display: block; margin-bottom: 40px ;}
     footer>div{width:100%}
     .timetable{display: block;}
-    .timetable>div{display: flex; width: 80%; margin: 0 auto;
-    justify-content: space-around;}
+    
+    .timetable>div{
+        display: flex;
+        width: 80%;
+        margin: 5px auto;
+        justify-content: space-around;
+        font-size: .74rem;}
 } 
+
