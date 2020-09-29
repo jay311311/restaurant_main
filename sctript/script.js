@@ -17,9 +17,7 @@ function handleOut(){
 function handleScroll(){
     if( window.pageYOffset >= 0){
         shopBox.classList.add("show")
-       
     } if (window.pageYOffset >= innerHeight){
-       
          foodBox.classList.add("show") 
     }
 }
