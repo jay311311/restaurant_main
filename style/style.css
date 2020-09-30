@@ -272,8 +272,8 @@ nav .person{
     justify-content: center;
     align-items: center;
 }
-
-#map{
+.map {display: flex ; justify-content: center; align-items: center;}
+iframe{
     margin: 0 auto;
     width: 80%;
     height: 500px;
@@ -389,7 +389,7 @@ footer>div{
     .review_card h4{ text-align: center; font-size: 20px;margin: 20px 0;}
     .review_card p{text-align: center;}
 
-    #map{ width: 70%; height: 350px;}
+    iframe{ width: 70%; height: 350px;}
 }
 
 @media screen and (max-width:1025px) { 
