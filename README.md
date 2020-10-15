@@ -1,1 +1,9 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/48cf3182-7a94-4ebd-9d1c-5f6c672eb6be/deploy-status)](https://app.netlify.com/sites/kind-thompson-7663a2/deploys)
+# Restaurant homepage
+
+* Main Page
+    - javascript animation
+* Longin Page
+    - localstorage(uster)
+* About Page 
+* order Page(cart)
+    - localstorage(cart)

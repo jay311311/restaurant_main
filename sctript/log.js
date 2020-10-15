@@ -1,15 +1,13 @@
-const title = document.querySelector(".title")
-const tabs = document.querySelectorAll(".title h2")
-const form =  document.querySelectorAll(".form")
-
 const name = document.getElementById('name');
 const pw = document.getElementById('pw');
 const number = document.getElementById('number');
 const mail = document.getElementById('mail');
 const register = document.querySelector(".register")
 const login = document.querySelector(".check")
+const title = document.querySelector(".title")
 
 title.addEventListener("click", handleIn)
+
 register.addEventListener("click", store)
 login.addEventListener("click", check)
 
@@ -17,8 +15,10 @@ login.addEventListener("click", check)
 function handleIn(event){
     event.preventDefault();
 
-    let tabNum = event.target.getAttribute("data-tab");
+    const tabs = document.querySelectorAll(".title h2")
+    const form =  document.querySelectorAll(".form")
 
+    let tabNum = event.target.getAttribute("data-tab");
     tabs.forEach((e)=>{e.classList.remove("current")});
     event.target.classList.add("current");
     form.forEach((e)=>{e.classList.remove("current")});
@@ -28,7 +28,6 @@ function handleIn(event){
 
 
 function store(event){
-    console.log("aa")
     event.preventDefault()
 
     let lowerCaseLetters = /[a-z]/g;
@@ -64,11 +63,12 @@ function store(event){
         localStorage.setItem('pw', pw.value);
         localStorage.setItem('id', mail.value);
         localStorage.setItem('phone-number', number.value);
+        localStorage.setItem('state', "in")
         alert('Your account has been created');
     }
 }
 
-//checking
+
 function check(event){
     event.preventDefault()
 
@@ -77,12 +77,16 @@ function check(event){
 
     let userName = document.getElementById('userId');
     let userPw = document.getElementById('userPw');
-   /*  let userRemember = document.getElementById("rememberMe"); */
 
     if(userName.value == storedName && userPw.value == storedPw){
         location.href="index.html";
+        localStorage.setItem("state","in")
+
         
     }else{
         alert('아이디 또는 비밀번호를 다시 확인해주세요');
     }
 }
+
+
+

@@ -1,19 +1,27 @@
+const logOut = document.querySelector(".logout")
+
+logOut.addEventListener("click", handleLogOut)
+
+function handleLogOut(){
+
+    localStorage.setItem("state","out")
+    if(localStorage.getItem("state") === "out"){
+       removeGreeting()
+    } 
+}
 
 function paintGreeting(text){
-    const user = document.querySelector(".person span");
+    const user = document.querySelector(".person span")
     user.innerHTML= `${text}님,`
-/*  newSpan.appendChild(person)  */
 }
 
 
 function userName(){
-    const currentUser = localStorage.getItem("name");
-    if (currentUser){
-        paintGreeting(currentUser)
-    }
+    if(localStorage.getItem("state") === "in"){
+    const currentUser = localStorage.getItem("name")
+    paintGreeting(currentUser)
+    } 
 }
 
-function init(){
-    userName();
-}
-init();
+userName()
+
