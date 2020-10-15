@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>chez-max | login</title>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="./img/logo.gif" alt="logo"></a>
+            </div>
+            <nav>
+                <ul class="navigator">
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+                <div class="person">
+                    <span></span>
+                    <a href="login.html" >
+                        <i class="far fa-user"></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <div id="login">
+            <div class="back_photo_1">
+                <div class="dark">
+                    <div class="main_box">
+                        <img src="./img/login.png" alt="title-letter" />
+                    </div>
+                </div>
+            </div>
+            <div class="login__container">
+                <div class="title">
+                    <h2 class="current" data-tab="tab1">sign in</h2>
+                    <h2 data-tab="tab2">sign up</h2>
+                </div>
+                <div class="form current" id="tab1">
+                    <form class="register-form" method="post" >
+                        <input type="email" placeholder="email address" id= "userId" />
+                        <input type="password" placeholder="password" id= "userPw" />
+                        <button type="submit"   class="check" >sign in</button>
+                    </form>
+                </div> 
+                <div class="form" id="tab2">
+                    <form class="register-form" method="post" >
+                        <input type="text" placeholder="name" id="name"/>
+                        <input type="number" placeholder="phone-number" id="number" />
+                        <input type="email" placeholder="email address" id="mail"/>
+                        <input type="password" placeholder="password"  id= "pw"/>
+                        
+                        <ul class="helper-text">
+                            <li class="length">Passwords is must be at least 8 characters long.</li>
+                            <li class="lowercase">Passwords is must contain a lowercase letter.</li>
+                            <li class="uppercase">Passwords is must contain an uppercase letter.</li>
+                            <li class="special">Passwords is must contain a number or special character.</li>
+                        </ul>
+                        <button type="submit" class="register">create</button>
+                        
+                    </form>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <script src="./sctript/user.js"></script>
+    <script src="./sctript/log.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" integrity="sha384-3Nqiqht3ZZEO8FKj7GR1upiI385J92VwWNLj+FqHxtLYxd9l+WYpeqSOrLh0T12c" crossorigin="anonymous"></script>
+</body>
+</html>
