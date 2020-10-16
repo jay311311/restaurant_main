@@ -8,10 +8,28 @@
     top:70px;
 }
 
-.login__container{height:50vh;  width:400px;  margin:  0 auto; padding-top:5% }
-.login__container .title{ display: flex; justify-content: center; margin: 0 auto; margin: 0 auto;}
-.login__container .title h2{width: 50%; line-height: 50px; text-align: center;}
-.login__container .title .current{background-color: yellow;}
+.login__container{
+  height:50vh;  
+  width:400px;  
+  margin:  0 auto;
+  padding-top:5% ;
+}
+
+.login__container .title{ 
+  display: flex; 
+  justify-content: center; 
+  margin: 0 auto; 
+  margin: 0 auto;
+}
+
+.login__container .title h2{
+  width: 50%; 
+  line-height: 50px;
+  text-align: center;
+}
+
+.login__container .title .current{border-bottom: 5px solid tomato;}
+
 .form {
   display: none;
     position: relative;

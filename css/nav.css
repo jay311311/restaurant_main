@@ -10,11 +10,9 @@ header{
     left: 0;
 }
  
-.logo{
-    width:250px;
-}
-.logo img{width: 100%;}
+.logo{width:250px;}
 
+.logo img{width: 100%;}
 
 nav{
     width: 100%;
@@ -45,33 +43,58 @@ nav .person{
     margin-right: 4%;
     color: white;
 }
+
 nav .person a{ display:inline}
-nav .person span{
-    font-size: 1.2rem
+
+nav .person span{font-size: 1.2rem}
+
+nav .person:hover ul{display: block;}
+
+nav .person ul{
+    display: none;
+    position: absolute;
+    right: 0;
+    top:0;
+    text-align: right;
+   width: 120px;
+    font-size: .9rem;
+    animation: show 1s;
 }
 
+
+@keyframes show{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+nav .person li{
+    position: relative;
+    right:0;
+    top:60px;
+    line-height: 30px;
+    margin-left: auto;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
 @media screen and (max-width:1440px) { 
+
     .navigator{ margin-top: 10px;}
-
-
 
     nav .person{
         margin-top: 18px;
         font-size: 25px;
     }
 
-    .logo{
-        width:200px; 
-        
-    }
+    .logo{width:200px; }
 
 }
 @media screen and (max-width:1025px) { 
+
     .navigator a{ line-height: 30px;}
 
-    .logo{
-        width:200px;
-    }
+    .logo{width:200px;}
 
     nav .person{ 
         margin-top:25px; 
@@ -79,7 +102,6 @@ nav .person span{
     }
 }
 @media screen and (max-width:768px) { 
-
   
     .navigator{margin-top: 20px;}
 
@@ -91,7 +113,6 @@ nav .person span{
 
 
 @media screen and (max-width:425px) {
-
 
     nav .person{ 
         font-size: 17px;  

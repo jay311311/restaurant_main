@@ -6,6 +6,7 @@
 @import "main.css";
 @import "nav.css";
 @import "product.css";
+@import "cart.css";
 
 *{
     margin: 0; 

@@ -19,7 +19,7 @@ function List (){
         const imgBox = document.createElement("div")
         const img = document.createElement("img")
 
-        imgBox.setAttribute("class", "imgBox")
+        imgBox.setAttribute("class", "imgBox");
 
         name.innerHTML=`${productName[i]}`
         price.innerHTML=`€${productPrice[i]}`

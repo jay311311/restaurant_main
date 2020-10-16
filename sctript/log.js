@@ -82,7 +82,6 @@ function check(event){
         location.href="index.html";
         localStorage.setItem("state","in")
 
-        
     }else{
         alert('아이디 또는 비밀번호를 다시 확인해주세요');
     }
