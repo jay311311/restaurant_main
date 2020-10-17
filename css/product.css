@@ -1,5 +1,5 @@
 #product .back_photo_1{
-    height: 350px;
+    height: 300px;
     background-image: url("../img/croissants-1.jpg")
 }
 
@@ -10,7 +10,8 @@
 
 .product__container{
     margin: 0 auto; 
-    padding: 100px 0;
+    padding-top: 10px;
+    padding-bottom: 100px;
 }
 
 .product__container ul{ 
@@ -23,7 +24,7 @@
 
 .product__container li{
     position: relative; 
-    z-index: 999;
+
     width: 300px; 
     padding: 5px 10px;  
 }
@@ -52,12 +53,14 @@
     z-index: 5;
 }
 
-.product__container .imgBox::before{
+.product__container .imgBox button{
     position: absolute;
+    font-size: 1.5rem;
     z-index: 1;
     bottom:0;
     right: 0;
     width: 60px ;
+    border:none;
     line-height: 60px ;
     content:"cart";
     color: white;
@@ -69,7 +72,8 @@
     transform: translate(70px,70px);
 }
 
-.product__container li:hover .imgBox::before{ transform:translate(0,0)}
+
+.product__container li:hover .imgBox button{ transform:translate(0,0)}
 
 @media screen and (max-width:1024px) {
     .product__container ul{justify-content: center;}

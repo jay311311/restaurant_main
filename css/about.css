@@ -8,7 +8,7 @@
     top:60px;
 }
 #about .title{
-    width:13.5%;
+    width:160px;
     overflow: hidden;
 }
 #about h1{
@@ -39,6 +39,8 @@
     display: flex; 
     justify-content: space-around;}
 
+#about .about__col img{width:40%; height: 100%; }
+
 #about .intro img{width:30%; height: auto;}
 
 #about h2 {
@@ -59,4 +61,11 @@
 #about .intro__container, .business__container{
     width: 90%;
     margin: 0 auto;
+}
+
+
+
+
+@media screen and (max-width:1024px) { 
+    #about .about__col img{display: none;}
 }

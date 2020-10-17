@@ -1,0 +1,35 @@
+#cart{padding:100px 0; width:90%; margin:  0 auto;}
+
+.basket__head{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 5px solid tomato;
+}
+.basket__head li,.basket__data li {
+    text-align: center;
+    width: 25%;
+    line-height: 50px;
+}
+
+.basket__data{  
+    width: 90%;
+    margin: 0 auto;
+    }
+
+.updown{
+    display: flex;
+    justify-content: center;
+}
+.updown input{text-align: center;}
+
+.result{text-align: right;}
+
+.basket__data li{
+    width: 100%;
+    display: flex;
+}
+.basket__data li img{ width: 100%;}
+.basket__data li>div{
+    width: 16.6666%;
+}
