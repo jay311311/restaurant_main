@@ -1,30 +1,51 @@
 import {storeProducts} from "./data.js"
 
 const container = document.querySelector(".cartContainer")
+const result = document.querySelector(".result")
 const containerParents = document.querySelector(".basket")
+
+
+
 
 let getCart = [];
 let n =0;
 let counter=1;
 
 
+
+
 function Cart(){
     //장바구니가 비어있을때
     if(sessionStorage.length === 0){
         
-        container.style.display="none"
+        container.style.display="none";
+        result.style.display="none";
 
         const title = document.createElement("span")
         title.setAttribute("class","emptytitle")
         title.innerHTML="your cart is currently empty" 
         containerParents.appendChild(title)
-
-        
     }
 
     //장바구니가 채워있을때
     if(sessionStorage){
-        container.style.display="block"
+        container.style.display="block";
+ 
+
+        const emptyAllBtn = document.querySelector(".emptybutton button")
+
+        emptyAllBtn.addEventListener("click", emptyAll)
+
+        function emptyAll(){
+            
+        console.log("click")
+           for(let i = getCart.length; i> 0; i--){
+               getCart.pop();
+           }
+           console.log(getCart)
+           sessionStorage.clear()
+           window.location.reload()
+        }
 
         //세션스토리지에 정보가 있다면 그내용을 getcart[]에 넣기
         for(let i = 0; i < sessionStorage.length ;i ++ ){
@@ -55,6 +76,8 @@ function Cart(){
             const del = document.createElement("span")
 
             //이벤트 추가
+
+            //휴지통 버튼으로 지우기
             del.onclick =(event)=>{
                 const trash = event.target.getAttribute("id")
                 getCart.splice(trash-1,1)
@@ -62,7 +85,7 @@ function Cart(){
                 console.log(getCart,sessionStorage)
                 window.location.reload()
             }
-
+            //수량 0 이하, 지우기
             function removal(event){
                 const minus = event.target.getAttribute("id")
                 getCart.splice(minus-1,1)
@@ -70,6 +93,8 @@ function Cart(){
                 console.log(getCart,sessionStorage)
                 window.location.reload()
             }
+
+            //수량 증가
             numUp.onclick=(event)=>{
                 console.log("aa")
                 event.preventDefault();
@@ -77,6 +102,7 @@ function Cart(){
                 num.innerHTML=`${item.count * counter}`
                 sum.innerHTML=`€${productPrice * counter}`
             }
+            //수량 감소
             numDown.onclick=(event)=>{
                 if(counter < 2 ){ removal(event)}
                 event.preventDefault();
