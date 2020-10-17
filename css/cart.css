@@ -34,9 +34,9 @@
     display: flex;
     padding-top: 20px;
 }
-img{ width: 70%; }
+.basket__data li img{ width: 70%; }
 .basket__data li div{ text-align: center; width:25%; margin:auto 0; line-height: 100%;}
-.imgBox img{ width: 70%; padding: auto ;}
+.basket__data .imgBox img{ width: 70%; padding: auto ;}
 .nameBox span{font-size: 1.2rem;}
 .priceBox span{ font-size: 1.2rem;}  
 .numBox .s__num{ display: inline-block; width:30%; font-size: 1.2rem; } 

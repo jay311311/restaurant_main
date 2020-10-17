@@ -22,19 +22,19 @@ const  lists = document.querySelector(".product__container ul")
         const btn = document.createElement("button")
 
         imgBox.setAttribute("class", "imgBox");
-        btn.setAttribute("id",`${productId[i]}` )
+        btn.setAttribute("id",`${productId[i]}`)
+        btn.setAttribute("class","show")
 
         //sessionstorage에 선택된 데이터 저장
         
          btn.onclick=(event)=>{
         
-             const tab = event.target.getAttribute("id")
+            const tab = event.target.getAttribute("id")
            sessionStorage.setItem(tab, JSON.stringify(productAll[tab]));
             console.log(sessionStorage.getItem(tab))
-            console.log(typeof tab)
 
-            
         }
+
         
 
         btn.innerHTML = 'cart'

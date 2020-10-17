@@ -1,11 +1,13 @@
+import {storeProducts} from "./data.js"
+
 let getCart = [];
-
 let n =0;
-
-
 let counter=1;
 
 function Cart(){
+    
+
+
     if(sessionStorage){
         //세션스토리지에 정보가 있다면 그내용을 getcart[]에 넣기
         for(let i = 0; i < sessionStorage.length ;i ++ ){
@@ -15,11 +17,12 @@ function Cart(){
        //get cart[]의 내용을 루프돌려서 꺼내기
        for(n =0; n < getCart.length; n++){
        const cartShow =  getCart.map(item=>item)
-       paintCart(cartShow[n])
+       let productPrice = storeProducts.map(product=>product.price)
+       paintCart(cartShow[n],productPrice[n])
     }
     }
 
-     function paintCart(items){
+     function paintCart(items,productPrice){
         const item = JSON.parse(items)
         
         console.log(item)
@@ -43,43 +46,36 @@ function Cart(){
                 window.location.reload()
             }
 
-            function removal(){
-                const listId = list.getAttribute("id")
-                const check = getCart.indexOf(sessionStorage.getItem(listId))
-                sessionStorage.removeItem(listId)
-                
-                    console.log(check,getCart,remover)
-              /*   sessionStorage.removeItem(listId)
-
-                const remover = getCart.splice(check,1)
-                getCart.push(remover)
-                console.log(check,getCart,remover) */
-              
-
+            function removal(event){
+                const minus = event.target.getAttribute("id")
+                getCart.splice(minus-1,1)
+                sessionStorage.removeItem(list.getAttribute("id"))
+                console.log(getCart,sessionStorage)
+                window.location.reload()
             }
             numUp.onclick=(event)=>{
                 console.log("aa")
                 event.preventDefault();
                 counter++;
                 num.innerHTML=`${item.count * counter}`
-                sum.innerHTML=`€${item.price * counter}`
+                sum.innerHTML=`€${productPrice * counter}`
             }
             numDown.onclick=(event)=>{
-                if(counter < 1 ){ removal()}
+                if(counter < 2 ){ removal(event)}
                 event.preventDefault();
                 counter--;
                 num.innerHTML=`${item.count * counter}`
-                sum.innerHTML=`€${item.price * counter}`
+                sum.innerHTML=`€${productPrice * counter}`
             }
 
             img.src=`${item.img}`
             name.innerHTML=`${item.title}`
-            price.innerHTML=`${item.price}`
+            price.innerHTML=`$€{productPrice}`
             num.innerHTML=`${item.count * counter}`
             numUp.innerHTML=`➕`
             num.innerHTML=`${item.count * counter}`
             numDown.innerHTML=`➖`
-            sum.innerHTML=`€${item.price * item.count}`
+            sum.innerHTML=`€${productPrice * item.count}`
             del.innerHTML=`🗑`
 
         
@@ -101,7 +97,7 @@ function Cart(){
             delBox.setAttribute("class", "delBox");
             num.setAttribute("class","s__num")
             del.setAttribute("id",n)
-           
+            numDown.setAttribute("id",n)
 
             imgBox.appendChild(img)
             nameBox .appendChild(name)
@@ -126,9 +122,5 @@ function Cart(){
             
       }
          }
-
-
-
-
 
 Cart()
