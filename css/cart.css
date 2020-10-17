@@ -1,4 +1,8 @@
-#cart{padding:100px 0; width:90%; margin:  0 auto;}
+#cart{
+    padding:100px 0; 
+    width:90%; 
+    margin:  0 auto;
+}
 
 .basket__head{
     width: 90%;
@@ -28,8 +32,13 @@
 .basket__data li{
     width: 100%;
     display: flex;
+    padding-top: 20px;
 }
-.basket__data li img{ width: 100%;}
-.basket__data li>div{
-    width: 16.6666%;
-}
+img{ width: 70%; }
+.basket__data li div{ text-align: center; width:25%; margin:auto 0; line-height: 100%;}
+.imgBox img{ width: 70%; padding: auto ;}
+.nameBox span{font-size: 1.2rem;}
+.priceBox span{ font-size: 1.2rem;}  
+.numBox .s__num{ display: inline-block; width:30%; font-size: 1.2rem; } 
+.sumBox span{ font-size: 1.2rem;} 
+.delBox span{ font-size: 2rem;} 
