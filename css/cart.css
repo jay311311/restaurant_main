@@ -34,6 +34,19 @@
     display: flex;
     padding-top: 20px;
 }
+.emptytitle{ 
+    position: relative;
+    z-index: -3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%; 
+    text-align: center; 
+    font-size: 2rem; 
+    font-family:'Times New Roman', Times, serif
+}
+.basket__data .emptytitle span{position: relative;
+    z-index: -3; text-align: center; font-size: 2rem; }
 .basket__data li img{ width: 70%; }
 .basket__data li div{ text-align: center; width:25%; margin:auto 0; line-height: 100%;}
 .basket__data .imgBox img{ width: 70%; padding: auto ;}

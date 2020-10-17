@@ -32,43 +32,44 @@
             </nav>
         </header>
         <div id="cart">
-            <form  id="orderform" method="post"  action="/">
-                <div class="basket" >
-                    <ul class="basket__head">
-                        <li class="img">이미지</li>
-                        <li class="name">상품명</li>
-                        <li class="price">가격</li>
-                        <li class="num">수량</li>
-                        <li class="sum">합계</li>
-                        <li class="delete">삭제</li>
-                    </ul>
-                 
-                    <ul class="basket__data">
-                      
-                    <ul>
-                </div>
-            </form> 
-            <div class="result">
-                    <!-- "장바구니 기능 버튼" -->
-                    <div class="right-align basketrowcmd">
-                        <a href="#" class="abutton">장바구니비우기</a>
+            <div class="cartContainer">
+                <form  id="orderform" method="post"  action="/">
+                    <div class="basket" >
+                        <ul class="basket__head">
+                            <li class="img">이미지</li>
+                            <li class="name">상품명</li>
+                            <li class="price">가격</li>
+                            <li class="num">수량</li>
+                            <li class="sum">합계</li>
+                            <li class="delete">삭제</li>
+                        </ul>
+                     
+                        <ul class="basket__data">
+                           
+                        <ul>
                     </div>
-    
-                    <!-- "장바구니 전체 합계 정보" -->
-                    <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 4개</div>
-                    <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 74,200원</div>
-                
-                    <div id="goorder" class="">
-                        <div class="clear"></div>
-                        <div class="buttongroup center-align cmd">
-                            <a href="#">선택한 상품 주문</a>
+                </form> 
+                <div class="result">
+                        <!-- "장바구니 기능 버튼" -->
+                        <div class="right-align basketrowcmd">
+                            <a href="#" class="emptybutton">장바구니비우기</a>
                         </div>
-                    </div>
-                
+        
+                        <!-- "장바구니 전체 합계 정보" -->
+                        <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 4개</div>
+                        <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 74,200원</div>
+                    
+                        <div id="goorder" class="">
+                            <div class="clear"></div>
+                            <div class="buttongroup center-align cmd">
+                                <a href="#">선택한 상품 주문</a>
+                            </div>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
-    
+    <script src="./sctript/emptyCart.js"></script>
     <script  type="module" src="./sctript/setCart.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" integrity="sha384-3Nqiqht3ZZEO8FKj7GR1upiI385J92VwWNLj+FqHxtLYxd9l+WYpeqSOrLh0T12c" crossorigin="anonymous"></script>
 

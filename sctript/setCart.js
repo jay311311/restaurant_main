@@ -1,14 +1,31 @@
 import {storeProducts} from "./data.js"
 
+const container = document.querySelector(".cartContainer")
+const containerParents = document.querySelector(".basket")
+
 let getCart = [];
 let n =0;
 let counter=1;
 
+
 function Cart(){
-    
+    //장바구니가 비어있을때
+    if(sessionStorage.length === 0){
+        
+        container.style.display="none"
 
+        const title = document.createElement("span")
+        title.setAttribute("class","emptytitle")
+        title.innerHTML="your cart is currently empty" 
+        containerParents.appendChild(title)
 
+        
+    }
+
+    //장바구니가 채워있을때
     if(sessionStorage){
+        container.style.display="block"
+
         //세션스토리지에 정보가 있다면 그내용을 getcart[]에 넣기
         for(let i = 0; i < sessionStorage.length ;i ++ ){
        const cartItem =  sessionStorage.getItem(sessionStorage.key(i))
@@ -70,7 +87,7 @@ function Cart(){
 
             img.src=`${item.img}`
             name.innerHTML=`${item.title}`
-            price.innerHTML=`$€{productPrice}`
+            price.innerHTML=`€${productPrice}`
             num.innerHTML=`${item.count * counter}`
             numUp.innerHTML=`➕`
             num.innerHTML=`${item.count * counter}`
@@ -109,7 +126,7 @@ function Cart(){
             delBox.appendChild(del)
 
 
-            const basketData = document.querySelector(".basket__data")
+            const basketData = document.querySelector(".basket__data ul")
             
             list.appendChild(imgBox)
             list.appendChild(nameBox)
