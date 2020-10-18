@@ -21,6 +21,7 @@
     display: flex;
     border-bottom: 5px solid tomato;
 }
+
 .cartContainer li {
     text-align: center;
     width: 25%;
@@ -30,12 +31,13 @@
 .basket__data{  
     width: 90%;
     margin: 0 auto;
-    }
+}
 
 .updown{
     display: flex;
     justify-content: center;
 }
+
 .updown input{text-align: center;}
 
 .result{text-align: right;}
@@ -45,7 +47,9 @@
     display: flex;
     padding-top: 20px;
 }
+
 .emptytitle{ 
+    padding-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,20 +59,89 @@
     font-family:'Times New Roman', Times, serif
 }
 
+.emptybutton button{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width:150px;
+    line-height: 30px;
+    font-size: 1rem;
+    background-color: tomato;
+    border-radius: 10px;
+    color: white;
+}
+
+.sum__price span{ 
+    text-align: center; 
+    font-size: 2rem; 
+    color: #353b48; 
+    display: inline-block; 
+    width: 150px; 
+    line-height: 50px;
+}
+
+
 .basket__data li img{ width: 70%; }
-.basket__data li div{ text-align: center; width:25%; margin:auto 0; line-height: 100%;}
-.basket__data .imgBox img{ width: 70%; padding: auto ;}
-.nameBox span{font-size: 1.2rem;}
-.priceBox span{ font-size: 1.2rem;}  
-.numBox .s__num{ display: inline-block; width:30%; font-size: 1.2rem; } 
-.sumBox span{ font-size: 1.2rem;} 
-.delBox span{ font-size: 2rem;} 
+
+.basket__data li div{ 
+    text-align: center; 
+    width:25%; 
+    margin:auto 0; 
+    line-height: 100%;
+}
+
+.basket__data .imgBox img{ 
+    width: 70%; 
+    padding: auto ;
+}
+
+.nameBox span{font-size: 1.3rem;}
+
+.priceBox span{ font-size: 1.3rem;}  
+
+.sumBox span{ font-size: 1.3rem;} 
+
+.delBox span{ font-size: 1.8rem;} 
+
+.numBox .s__num{ 
+    display: inline-block;
+     width:30%;
+     font-size: 1.3rem; 
+    } 
+    
 
 @media screen and (max-width:768px) {
-    .basket__data li div{ width: 100%; padding: 5px 0;}
+    .emptybutton button{ 
+        width:70px; 
+        font-size: .8rem;
+    }
+
+    .sum__price span{ 
+        width:70px; 
+        font-size: 1.5rem;
+    }
+
+    .basket__data li div{
+         width: 90%; 
+         padding: 5px 0;
+    }
+
     .basket__head{ display: none;}
-    .basket__data{ display: flex; justify-content: center;}
-    .basket__data li{display: block; line-height: 350px;  text-align: center; }
+
+    .basket__data{ 
+        display: flex; 
+        justify-content: center;
+    }
+
+    .basket__data li{
+        display: block; 
+        line-height: 350px;  
+        text-align: center; 
+    }
+
     .numBox .s__num {width:15%}
-    .result{position:fixed; bottom:8%; right:3%}
+
+    .result{
+        position:fixed; 
+        bottom:8%; 
+        right:3%
+    }
  }

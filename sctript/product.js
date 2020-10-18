@@ -28,14 +28,14 @@ const  lists = document.querySelector(".product__container ul")
         //sessionstorage에 선택된 데이터 저장
         
          btn.onclick=(event)=>{
-        
+            event.preventDefault();
             const tab = event.target.getAttribute("id")
-           sessionStorage.setItem(tab, JSON.stringify(productAll[tab]));
+            if( sessionStorage.getItem(tab)){}
+            
+            sessionStorage.setItem(tab, JSON.stringify(productAll[tab]));
             console.log(sessionStorage.getItem(tab))
-
         }
 
-        
 
         btn.innerHTML = 'cart'
         name.innerHTML=`${productName[i]}`
