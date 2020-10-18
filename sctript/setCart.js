@@ -1,17 +1,12 @@
-import {storeProducts} from "./data.js"
-
 const container = document.querySelector(".cartContainer")
 const result = document.querySelector(".result")
 const containerParents = document.querySelector(".basket")
-
-
-
+const allSumPrice = document.querySelector(".sum__price")
 
 let getCart = [];
 let n =0;
-let counter=1;
 
-
+let subTotal = 0;
 
 
 function Cart(){
@@ -31,7 +26,7 @@ function Cart(){
     if(sessionStorage){
         container.style.display="block";
  
-
+        //전체 장바구니 비우기
         const emptyAllBtn = document.querySelector(".emptybutton button")
 
         emptyAllBtn.addEventListener("click", emptyAll)
@@ -45,25 +40,36 @@ function Cart(){
            console.log(getCart)
            sessionStorage.clear()
            window.location.reload()
+           subTotal = 0;
+         
+           allSumPrice.innerHTML=`€${subTotal}`
         }
 
-        //세션스토리지에 정보가 있다면 그내용을 getcart[]에 넣기
+
+
+        //세션스토리지에 정보가 있다면 그내용을 getcart[]에 넣기(json.parse)
         for(let i = 0; i < sessionStorage.length ;i ++ ){
        const cartItem =  sessionStorage.getItem(sessionStorage.key(i))
-        getCart.push(cartItem)
+       const jsonItem = JSON.parse(cartItem)
+        getCart.push(jsonItem)
        }
+       
        //get cart[]의 내용을 루프돌려서 꺼내기
-       for(n =0; n < getCart.length; n++){
+       for(n = 0; n < getCart.length; n++){
        const cartShow =  getCart.map(item=>item)
-       let productPrice = storeProducts.map(product=>product.price)
-       paintCart(cartShow[n],productPrice[n])
+       paintCart(cartShow[n])
     }
     }
 
-     function paintCart(items,productPrice){
-        const item = JSON.parse(items)
+     function paintCart(item){
+
         
-        console.log(item)
+        const getCartItem = getCart[n] 
+        const itemPrice = item.price
+        
+        
+        console.log(item,getCartItem)
+
 
             const list = document.createElement("li")
             const img = document.createElement("img")
@@ -74,19 +80,24 @@ function Cart(){
             const numDown = document.createElement("span")
             const sum = document.createElement("span")
             const del = document.createElement("span")
+            
 
-            //이벤트 추가
 
+            //이벤트 
             //휴지통 버튼으로 지우기
             del.onclick =(event)=>{
+                event.preventDefault()
+
                 const trash = event.target.getAttribute("id")
                 getCart.splice(trash-1,1)
                 sessionStorage.removeItem(list.getAttribute("id"))
                 console.log(getCart,sessionStorage)
                 window.location.reload()
             }
-            //수량 0 이하, 지우기
+            //수량감소이후, 0 일때 지우기
             function removal(event){
+                event.preventDefault()
+
                 const minus = event.target.getAttribute("id")
                 getCart.splice(minus-1,1)
                 sessionStorage.removeItem(list.getAttribute("id"))
@@ -96,33 +107,54 @@ function Cart(){
 
             //수량 증가
             numUp.onclick=(event)=>{
-                console.log("aa")
-                event.preventDefault();
-                counter++;
-                num.innerHTML=`${item.count * counter}`
-                sum.innerHTML=`€${productPrice * counter}`
+                event.preventDefault()
+
+                item.count++
+
+                const numUpResult =  item.count
+                const sumUpResult = getCartItem.price * item.count
+
+                getCartItem.count = numUpResult
+                getCartItem.total = sumUpResult
+                subTotal+=getCartItem.price
+               
+                num.innerHTML=`${numUpResult}`
+                sum.innerHTML=`€${sumUpResult}`
+                allSumPrice.innerHTML=`€${subTotal}`
+               
             }
             //수량 감소
             numDown.onclick=(event)=>{
-                if(counter < 2 ){ removal(event)}
+                if(item.count < 2 ){ removal(event)}
                 event.preventDefault();
-                counter--;
-                num.innerHTML=`${item.count * counter}`
-                sum.innerHTML=`€${productPrice * counter}`
-            }
 
+                item.count--
+
+                const numDownResult =  item.count
+                const sumDownResult = getCartItem.price * item.count
+
+                getCartItem.count = numDownResult
+                getCartItem.total = sumDownResult
+                subTotal-=getCartItem.price
+
+                num.innerHTML=`${numDownResult}`
+                sum.innerHTML=`€${sumDownResult}`
+                allSumPrice.innerHTML=`€${subTotal}`
+                
+            }
+            
+         
+            subTotal+=getCartItem.price
             img.src=`${item.img}`
             name.innerHTML=`${item.title}`
-            price.innerHTML=`€${productPrice}`
-            num.innerHTML=`${item.count * counter}`
+            price.innerHTML=`€${getCartItem.price}`
+            num.innerHTML=`${item.count  }`
             numUp.innerHTML=`➕`
-            num.innerHTML=`${item.count * counter}`
+            num.innerHTML=`${item.count }`
             numDown.innerHTML=`➖`
-            sum.innerHTML=`€${productPrice * item.count}`
+            sum.innerHTML=`€${getCartItem.price * item.count}`
             del.innerHTML=`🗑`
 
-        
-           
 
             const imgBox = document.createElement("div")
             const nameBox = document.createElement("div")
@@ -153,7 +185,7 @@ function Cart(){
 
 
             const basketData = document.querySelector(".basket__data ul")
-            
+
             list.appendChild(imgBox)
             list.appendChild(nameBox)
             list.appendChild(priceBox)
@@ -164,6 +196,9 @@ function Cart(){
             basketData.appendChild(list)
             
       }
+      console.log(subTotal)
+      
+      allSumPrice.innerHTML=`€${subTotal}`
          }
 
 Cart()
