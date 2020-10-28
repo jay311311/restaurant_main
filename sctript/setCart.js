@@ -2,11 +2,13 @@ const container = document.querySelector(".cartContainer")
 const result = document.querySelector(".result")
 const containerParents = document.querySelector(".basket")
 const allSumPrice = document.querySelector(".sum__price span")
+const paypalBtn  = document.querySelector("#paypal-button-container")
+
 
 let getCart = []
 let n =0
-
 let subTotal = 0
+
 
 
 function Cart(){
@@ -168,12 +170,11 @@ function Cart(){
         imgBox.appendChild(img)
         nameBox .appendChild(name)
         priceBox.appendChild(price)
-        numBox.appendChild(numUp)
-        numBox.appendChild(num)
         numBox.appendChild(numDown)
+        numBox.appendChild(num)
+        numBox.appendChild(numUp)
         sumBox.appendChild(sum)
         delBox.appendChild(del)
-
 
         const basketData = document.querySelector(".basket__data ul")
 
@@ -188,6 +189,24 @@ function Cart(){
     }
 
     allSumPrice.innerHTML=`€${subTotal}`
+
+    
 }
+
+
+paypal.Buttons({
+    createOrder: function(data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            currency_code:"EUR",
+            value: `${subTotal}`
+          }
+        }]
+      });
+    }
+  }).render('#paypal-button-container');
+
 
 Cart()

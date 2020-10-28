@@ -61,7 +61,7 @@
 
 .emptybutton button{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width:150px;
+    width:200px;
     line-height: 30px;
     font-size: 1rem;
     background-color: tomato;
@@ -105,22 +105,25 @@
     display: inline-block;
      width:30%;
      font-size: 1.3rem; 
-    } 
-    
+} 
+.paypal{margin-left: calc(100% - 200px); padding-top: 10px;}
+#paypal-button-container{
+    width: 200px;
+}
+#paypal-button-container iframe{box-shadow: none;}
 
 @media screen and (max-width:768px) {
-    .emptybutton button{ 
-        width:70px; 
-        font-size: .8rem;
-    }
+    .cartContainer{padding-top: 0;}
+    .emptybutton button{ font-size: .8rem;}
 
     .sum__price span{ 
         width:70px; 
-        font-size: 1.5rem;
+        font-size: 2.2rem;
+        padding-bottom: 10px;
     }
 
     .basket__data li div{
-         width: 90%; 
+         width: 100%; 
          padding: 5px 0;
     }
 
@@ -137,11 +140,8 @@
         text-align: center; 
     }
 
-    .numBox .s__num {width:15%}
+   /*  .numBox .s__num {width:15%} */
 
-    .result{
-        position:fixed; 
-        bottom:8%; 
-        right:3%
-    }
+
+
  }

@@ -57,18 +57,17 @@
                     </div>
                 </form> 
                 <div class="result">
+                    
+                        <!-- "장바구니 전체 합계 정보" -->
+                       
+                        <div  class="sum__price"><span></span></div>
                         <!-- "장바구니 기능 버튼" -->
                         <div class="emptybutton">
                             <button>전체 비우기</button>
                         </div>
         
-                        <!-- "장바구니 전체 합계 정보" -->
-                       
-                        <div  class="sum__price"><span></span></div>
-                        <div id="goorder" >
-                
-                            <div class="orderbutton">
-                                <a href="#">상품 주문</a>
+                        <div class="paypal" >
+                            <div  id="paypal-button-container" >
                             </div>
                         </div>
                 </div>
@@ -77,7 +76,8 @@
     </div>
     <script src="./sctript/user.js"></script>
     <script  type="module" src="./sctript/setCart.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AW1EsOs882CFPWzL3zPvoj4ihR7tfLTUHGPWzRGHh-EKdlCrq8bnoI7olru-tOjhh27vNXz16eMy7IK3&currency=EUR"></script>
+  
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" integrity="sha384-3Nqiqht3ZZEO8FKj7GR1upiI385J92VwWNLj+FqHxtLYxd9l+WYpeqSOrLh0T12c" crossorigin="anonymous"></script>
-
 </body>
 </html>
